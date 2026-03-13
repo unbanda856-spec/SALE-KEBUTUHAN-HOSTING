@@ -3,14 +3,18 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Website Hosting</title>
+<title>Produk Hosting</title>
 
 <style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, Helvetica, sans-serif;
+}
 
 body{
-margin:0;
-font-family:Arial, Helvetica, sans-serif;
-background:#1f1f1f;
+background:linear-gradient(135deg,#0f0c29,#302b63,#24243e);
 color:white;
 }
 
@@ -18,140 +22,196 @@ color:white;
 
 #loading{
 position:fixed;
+top:0;
+left:0;
 width:100%;
 height:100%;
-background:#000;
+background:#0b001a;
 display:flex;
 flex-direction:column;
 justify-content:center;
 align-items:center;
-z-index:999;
+z-index:9999;
 }
 
-#loading img{
-width:120px;
-animation:spin 3s linear infinite;
+.loader{
+display:flex;
+gap:10px;
+margin-bottom:20px;
 }
 
-@keyframes spin{
-0%{transform:rotate(0deg);}
-100%{transform:rotate(360deg);}
+.loader span{
+width:15px;
+height:15px;
+background:#b300ff;
+border-radius:50%;
+animation:load 1s infinite alternate;
+box-shadow:0 0 15px #b300ff;
 }
 
-#loading h2{
-margin-top:20px;
+.loader span:nth-child(2){animation-delay:.2s;}
+.loader span:nth-child(3){animation-delay:.4s;}
+
+@keyframes load{
+from{transform:translateY(0);}
+to{transform:translateY(-15px);}
+}
+
+.loading-text{
 text-align:center;
-color:white;
 font-size:18px;
+color:#d9a3ff;
 }
 
 /* HEADER */
 
 header{
-background:#2b2b2b;
+display:flex;
+align-items:center;
+justify-content:center;
+gap:15px;
 padding:20px;
-text-align:center;
-font-size:24px;
-font-weight:bold;
+background:rgba(0,0,0,0.4);
+backdrop-filter:blur(10px);
+}
+
+.profile{
+width:60px;
+height:60px;
+border-radius:50%;
+border:3px solid #b300ff;
+box-shadow:0 0 15px #b300ff;
+}
+
+header h1{
+color:#e3b3ff;
 }
 
 /* CONTAINER */
 
 .container{
 padding:30px;
-}
-
-/* PRODUK SEJAJAR */
-
-.products{
 display:flex;
 flex-wrap:wrap;
 gap:20px;
 justify-content:center;
 }
 
+/* CARD */
+
 .card{
-background:#333;
+background:rgba(0,0,0,0.4);
+border-radius:15px;
 padding:20px;
-border-radius:10px;
-width:220px;
-text-align:center;
+width:250px;
+box-shadow:0 0 20px rgba(179,0,255,0.5);
 transition:0.3s;
 }
 
 .card:hover{
 transform:scale(1.05);
-background:#444;
+box-shadow:0 0 30px #b300ff;
+}
+
+.card h2{
+color:#d59cff;
+margin-bottom:10px;
 }
 
 .price{
-font-size:20px;
-color:#00ffcc;
-margin:10px 0;
+margin:5px 0;
 }
 
-button{
-background:#00ffcc;
-border:none;
+/* TELEGRAM BUTTON */
+
+.telegram{
+display:inline-block;
+margin-top:15px;
 padding:10px 20px;
-border-radius:5px;
-cursor:pointer;
+background:#b300ff;
+color:white;
+border-radius:10px;
+text-decoration:none;
+box-shadow:0 0 10px #b300ff;
+transition:0.3s;
 }
 
-button:hover{
-background:#00cc99;
+.telegram:hover{
+background:#8a00cc;
+box-shadow:0 0 20px #b300ff;
 }
 
 footer{
 text-align:center;
 padding:20px;
-background:#2b2b2b;
-margin-top:30px;
+color:#bbb;
 }
-
 </style>
 </head>
 
 <body>
 
-<!-- LOADING SCREEN -->
-
+<!-- LOADING -->
 <div id="loading">
-<img src="poto.png">
-<h2>WELCOME DI WEBSITE KEBUTUHAN HOSTING<br>
-SILAKAN MASUK DAN MEMILIH SESUKA HATI ANDA</h2>
+<div class="loader">
+<span></span>
+<span></span>
+<span></span>
 </div>
 
-<!-- MUSIK -->
+<div class="loading-text">
+Hallo Guys<br>
+Selamat datang di produk kebutuhan hosting<br>
+Silakan memilih
+</div>
+</div>
 
-<audio id="musik" autoplay loop hidden>
-<source src="lagu.mp3" type="audio/mp3">
-</audio>
-
-<script>
-let musik = document.getElementById("musik");
-
-/* jika browser memblokir autoplay */
-document.addEventListener("click", function () {
-musik.play();
-});
-</script>
-
+<!-- HEADER -->
 <header>
-SALE PANEL PTERODACTYL
+<img src="poto.png" class="profile">
+<h1>Produk Hosting</h1>
 </header>
 
+<!-- PRODUK -->
 <div class="container">
 
-<div class="products">
-
 <div class="card">
-<h3>Panel 5GB</h3>
-<div class="price">Rp 3.000</div>
-<button>Beli</button>
+<h2>Panel Pterodactyl</h2>
+<div class="price">5GB : Rp3.000</div>
+<div class="price">10GB : Rp5.000</div>
+<div class="price">Unlimited : Rp7.000</div>
+<div class="price">Reseller : Rp5.000</div>
+
+<a class="telegram" href="https://t.me/VANTUMMMM">Beli via Telegram</a>
 </div>
 
 <div class="card">
+<h2>Open Panel Jasteb VIP</h2>
+<div class="price">5K : 1 Minggu</div>
+<div class="price">10K : 2 Minggu</div>
+<div class="price">15K : 3 Minggu</div>
+<div class="price">30K : 1 Bulan</div>
+<div class="price">50K : Permanen</div>
+
+<p style="margin-top:10px;color:#ccc;">Bisa request nama kalian</p>
+
+<a class="telegram" href="https://t.me/VANTUMMMM">Order Telegram</a>
+</div>
+
+</div>
+
+<footer>
+© Produk HOSTING BY VANTUMMMM
+</footer>
+
+<script>
+setTimeout(()=>{
+document.getElementById("loading").style.display="none";
+},3000);
+</script>
+
+</body>
+</html><div class="card">
 <h3>Panel 10GB</h3>
 <div class="price">Rp 5.000</div>
 <button>Beli</button>
