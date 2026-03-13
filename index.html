@@ -3,148 +3,129 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Produk Hosting</title>
+<title>Hosting by VANTUMMMM</title>
 
 <style>
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:Arial, Helvetica, sans-serif;
+font-family:Arial, sans-serif;
 }
 
-body{
-background:linear-gradient(135deg,#0f0c29,#302b63,#24243e);
-color:white;
-}
-
-/* LOADING SCREEN */
-
+/* LOADING */
 #loading{
 position:fixed;
-top:0;
-left:0;
 width:100%;
-height:100%;
-background:#0b001a;
+height:100vh;
+background:#0a0015;
 display:flex;
-flex-direction:column;
 justify-content:center;
 align-items:center;
+flex-direction:column;
+color:white;
 z-index:9999;
 }
 
 .loader{
-display:flex;
-gap:10px;
-margin-bottom:20px;
-}
-
-.loader span{
-width:15px;
-height:15px;
-background:#b300ff;
+width:70px;
+height:70px;
+border:6px solid transparent;
+border-top:6px solid #a855f7;
 border-radius:50%;
-animation:load 1s infinite alternate;
-box-shadow:0 0 15px #b300ff;
+animation:spin 1s linear infinite;
+box-shadow:0 0 20px #a855f7;
 }
 
-.loader span:nth-child(2){animation-delay:.2s;}
-.loader span:nth-child(3){animation-delay:.4s;}
-
-@keyframes load{
-from{transform:translateY(0);}
-to{transform:translateY(-15px);}
+@keyframes spin{
+0%{transform:rotate(0deg);}
+100%{transform:rotate(360deg);}
 }
 
 .loading-text{
+margin-top:20px;
 text-align:center;
 font-size:18px;
-color:#d9a3ff;
+color:#d8b4fe;
+}
+
+/* BACKGROUND */
+body{
+background:linear-gradient(135deg,#0a0015,#2b0055);
+color:white;
+min-height:100vh;
 }
 
 /* HEADER */
-
 header{
-display:flex;
-align-items:center;
-justify-content:center;
-gap:15px;
-padding:20px;
-background:rgba(0,0,0,0.4);
-backdrop-filter:blur(10px);
+text-align:center;
+padding:40px;
 }
 
 .profile{
-width:60px;
-height:60px;
+width:120px;
+height:120px;
 border-radius:50%;
-border:3px solid #b300ff;
-box-shadow:0 0 15px #b300ff;
+border:3px solid #a855f7;
+box-shadow:0 0 20px #a855f7;
 }
 
-header h1{
-color:#e3b3ff;
+h1{
+margin-top:10px;
+color:#d8b4fe;
 }
 
-/* CONTAINER */
-
+/* PRODUK */
 .container{
-padding:30px;
 display:flex;
 flex-wrap:wrap;
-gap:20px;
 justify-content:center;
+gap:25px;
+padding:40px;
 }
 
-/* CARD */
-
 .card{
-background:rgba(0,0,0,0.4);
+background:rgba(255,255,255,0.05);
+border:1px solid #a855f7;
 border-radius:15px;
-padding:20px;
+padding:25px;
 width:250px;
-box-shadow:0 0 20px rgba(179,0,255,0.5);
+text-align:center;
+backdrop-filter:blur(10px);
+box-shadow:0 0 15px rgba(168,85,247,0.6);
 transition:0.3s;
 }
 
 .card:hover{
 transform:scale(1.05);
-box-shadow:0 0 30px #b300ff;
+box-shadow:0 0 25px #a855f7;
 }
 
 .card h2{
-color:#d59cff;
+color:#d8b4fe;
 margin-bottom:10px;
 }
 
 .price{
-margin:5px 0;
+margin:8px 0;
 }
 
 /* TELEGRAM BUTTON */
-
-.telegram{
+.btn{
 display:inline-block;
 margin-top:15px;
-padding:10px 20px;
-background:#b300ff;
+padding:10px 18px;
+background:#a855f7;
 color:white;
-border-radius:10px;
 text-decoration:none;
-box-shadow:0 0 10px #b300ff;
+border-radius:8px;
+box-shadow:0 0 10px #a855f7;
 transition:0.3s;
 }
 
-.telegram:hover{
-background:#8a00cc;
-box-shadow:0 0 20px #b300ff;
-}
-
-footer{
-text-align:center;
-padding:20px;
-color:#bbb;
+.btn:hover{
+background:#c084fc;
+box-shadow:0 0 20px #c084fc;
 }
 </style>
 </head>
@@ -153,12 +134,7 @@ color:#bbb;
 
 <!-- LOADING -->
 <div id="loading">
-<div class="loader">
-<span></span>
-<span></span>
-<span></span>
-</div>
-
+<div class="loader"></div>
 <div class="loading-text">
 Hallo Guys<br>
 Selamat datang di produk kebutuhan hosting<br>
@@ -166,85 +142,48 @@ Silakan memilih
 </div>
 </div>
 
-<!-- HEADER -->
 <header>
 <img src="poto.png" class="profile">
-<h1>Produk Hosting</h1>
+<h1>Produk Kebutuhan Hosting</h1>
 </header>
 
-<!-- PRODUK -->
 <div class="container">
 
 <div class="card">
 <h2>Panel Pterodactyl</h2>
-<div class="price">5GB : Rp3.000</div>
-<div class="price">10GB : Rp5.000</div>
-<div class="price">Unlimited : Rp7.000</div>
-<div class="price">Reseller : Rp5.000</div>
-
-<a class="telegram" href="https://t.me/VANTUMMMM">Beli via Telegram</a>
+<p class="price">5GB : 3.000</p>
+<p class="price">10GB : 5.000</p>
+<p class="price">Unlimited : 7.000</p>
+<p class="price">Reseller : 5.000</p>
+<a href="https://t.me/VANTUMMMM" class="btn">Beli via Telegram</a>
 </div>
 
 <div class="card">
 <h2>Open Panel Jasteb VIP</h2>
-<div class="price">5K : 1 Minggu</div>
-<div class="price">10K : 2 Minggu</div>
-<div class="price">15K : 3 Minggu</div>
-<div class="price">30K : 1 Bulan</div>
-<div class="price">50K : Permanen</div>
-
-<p style="margin-top:10px;color:#ccc;">Bisa request nama kalian</p>
-
-<a class="telegram" href="https://t.me/VANTUMMMM">Order Telegram</a>
-</div>
-
-</div>
-
-<footer>
-© Produk HOSTING BY VANTUMMMM
-</footer>
-
-<script>
-setTimeout(()=>{
-document.getElementById("loading").style.display="none";
-},3000);
-</script>
-
-</body>
-</html><div class="card">
-<h3>Panel 10GB</h3>
-<div class="price">Rp 5.000</div>
-<button>Beli</button>
+<p class="price">5K : 1 Minggu</p>
+<p class="price">10K : 2 Minggu</p>
+<p class="price">15K : 3 Minggu</p>
+<p class="price">30K : 1 Bulan</p>
+<p class="price">50K : Permanen</p>
+<a href="https://t.me/VANTUMMMM" class="btn">Order</a>
 </div>
 
 <div class="card">
-<h3>Panel Unlimited</h3>
-<div class="price">Rp 7.000</div>
-<button>Beli</button>
-</div>
-
-<div class="card">
-<h3>Reseller Panel</h3>
-<div class="price">Rp 5.000</div>
-<button>Beli</button>
+<h2>RESTOCK VPS</h2>
+<p class="price">Ram 16 Core 4 : 5.000</p>
+<p class="price">Ram 16 Core 8 : 7.000</p>
+<p class="price">Ram 32 Core 8 : 10.000</p>
+<a href="https://t.me/VANTUMMMM" class="btn">Beli VPS</a>
 </div>
 
 </div>
-
-</div>
-
-<footer>
-© 2026 Website Hosting
-</footer>
 
 <script>
-
 window.onload = function(){
 setTimeout(function(){
 document.getElementById("loading").style.display="none";
-},3000);
+},2000);
 }
-
 </script>
 
 </body>
